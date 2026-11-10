@@ -1,0 +1,141 @@
+{
+  "id": "business-data-analysis",
+  "version": "1.0.0",
+  "scene": "finance",
+  "sub_scene": "enterprise-analysis",
+  "label": {
+    "zh": "企业经营数据分析专家",
+    "en": "Business Data Analyst"
+  },
+  "description": {
+    "zh": "面向中小企业的经营数据分析。直接上传销售、采购、费用、库存、应收、预算等系统导出表或 Excel，自动整理和关联，回答赚了多少、利润为什么变了、钱花在哪里、钱压在哪里：指标体系搭建、利润变动桥、量价结构拆分、毛利与费用率、盈亏平衡、预算差异、应收账龄、呆滞库存、经营月报与看板。",
+    "en": "Operating-data analysis for small and mid-sized businesses. Upload sales, purchasing, expense, inventory, receivables or budget exports; it joins and cleans them and explains profit changes, margins and expense ratios, break-even, budget variances, receivables aging, slow-moving stock, and builds KPI trees, monthly reports and dashboards."
+  },
+  "welcome_message": {
+    "zh": "把公司的经营数据表格发给我（销售、费用、库存、应收、预算都可以），说说你想弄清楚什么。",
+    "en": "Send me your company's operating data (sales, expenses, inventory, receivables or budget) and tell me what you want to understand."
+  },
+  "icon_name": "candlestick-chart",
+  "color": "#0F766E",
+  "prompt_files": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "AGENTS.md"
+  ],
+  "quick_prompts": [
+    {
+      "title": {
+        "zh": "利润为什么变了",
+        "en": "Why did profit change?"
+      },
+      "description": {
+        "zh": "从上期利润到本期利润逐项拆解",
+        "en": "Bridge last period's profit to this period's"
+      },
+      "prompt": {
+        "zh": "请根据我上传的数据，拆解本月利润和上月相比为什么变化：收入、毛利率、各项费用分别影响了多少，用一张利润变动表列出来。",
+        "en": "From the data I uploaded, explain why this month's profit differs from last month: how much came from revenue, margin and each expense line, in one profit bridge table."
+      },
+      "color": "#e8f4ff",
+      "icon_name": "trending-up"
+    },
+    {
+      "title": {
+        "zh": "毛利与费用分析",
+        "en": "Margins and expenses"
+      },
+      "description": {
+        "zh": "哪个业务赚钱，费用花在哪里",
+        "en": "What earns money and where costs go"
+      },
+      "prompt": {
+        "zh": "请按产品（或业务线、客户）分析毛利和毛利率，找出不赚钱的部分；再按科目分析费用结构和费用率的变化。",
+        "en": "Analyze gross margin by product (or business line or customer) and find what loses money; then analyze expense structure and expense ratios by account."
+      },
+      "color": "#dcfce7",
+      "icon_name": "bar-chart-3"
+    },
+    {
+      "title": {
+        "zh": "预算执行分析",
+        "en": "Budget vs actual"
+      },
+      "description": {
+        "zh": "实际与预算的差异和原因",
+        "en": "Variances and their causes"
+      },
+      "prompt": {
+        "zh": "我上传了预算表和实际数据，请分析预算执行情况：哪些科目超支或没完成，差异多少，可能的原因是什么。",
+        "en": "I uploaded the budget and actuals. Analyze budget execution: which lines are over or under, by how much, and the likely reasons."
+      },
+      "color": "#fef3c7",
+      "icon_name": "list-todo"
+    },
+    {
+      "title": {
+        "zh": "应收与库存",
+        "en": "Receivables and stock"
+      },
+      "description": {
+        "zh": "逾期欠款和呆滞库存清单",
+        "en": "Overdue customers and slow-moving stock"
+      },
+      "prompt": {
+        "zh": "请分析应收账款账龄，列出需要催收的客户；再分析库存，找出超过 90 天没有出库的呆滞库存，并估算一共占用了多少资金。",
+        "en": "Age the receivables and list customers to chase; then find stock with no outbound movement for 90 days and estimate the cash tied up."
+      },
+      "color": "#f3e8ff",
+      "icon_name": "refresh-cw"
+    },
+    {
+      "title": {
+        "zh": "搭建指标体系",
+        "en": "Build a KPI tree"
+      },
+      "description": {
+        "zh": "确定该看哪些指标及其口径",
+        "en": "Choose metrics and define them"
+      },
+      "prompt": {
+        "zh": "我们是一家（填写行业和主要业务）的企业，请帮我搭建一套经营指标体系：主指标、指标树拆解、每个指标的口径和数据来源，并标出用现有数据能算哪些。",
+        "en": "We are a (industry and business) company. Build an operating KPI system: the main metric, a KPI tree, the definition and data source of each metric, and which ones our current data can compute."
+      },
+      "color": "#eef2ff",
+      "icon_name": "network"
+    },
+    {
+      "title": {
+        "zh": "经营月报",
+        "en": "Monthly business report"
+      },
+      "description": {
+        "zh": "收入、利润、现金和风险建议",
+        "en": "Revenue, profit, cash, risks and actions"
+      },
+      "prompt": {
+        "zh": "请根据上传的数据写一份经营月报：核心指标、利润变动原因、主要业务表现、资金情况、风险和建议，同时生成 Excel 汇总表和趋势图。",
+        "en": "Write a monthly business report from the uploaded data: key numbers, why profit changed, business highlights, cash position, risks and actions, plus an Excel summary and trend charts."
+      },
+      "color": "#fdf4e7",
+      "icon_name": "file-text"
+    }
+  ],
+  "task_examples": {
+    "zh": [
+      "每月3日「10:00」根据上月数据生成经营月报，附利润变动表",
+      "每周一「09:00」汇总上周收入、毛利和费用，与前一周对比",
+      "每月5日「10:00」对比预算与实际，列出超支最多的五个科目",
+      "每周三「16:00」更新应收账龄，列出逾期超过 30 天的客户",
+      "每月最后一个工作日「15:00」列出 90 天未出库的库存及金额",
+      "每季度首月10日「10:00」生成上季度经营分析，含毛利和费用率趋势"
+    ],
+    "en": [
+      "On the 3rd of each month at 10:00, write last month's business report with a profit bridge",
+      "Every Monday at 09:00, summarize last week's revenue, gross margin and expenses vs the week before",
+      "On the 5th of each month at 10:00, compare budget with actuals and list the five lines most over budget",
+      "Every Wednesday at 16:00, refresh receivables aging and list customers more than 30 days overdue",
+      "On the last business day of each month at 15:00, list stock with no outbound movement for 90 days and its value",
+      "On the 10th of the first month of each quarter at 10:00, write last quarter's review with margin and expense-ratio trends"
+    ]
+  }
+}
