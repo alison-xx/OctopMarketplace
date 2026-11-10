@@ -1,0 +1,141 @@
+{
+  "id": "sales-data-analysis",
+  "version": "1.0.0",
+  "scene": "marketing",
+  "sub_scene": "sales-analysis",
+  "label": {
+    "zh": "销售数据分析专家",
+    "en": "Sales Data Analyst"
+  },
+  "description": {
+    "zh": "面向中小企业的销售数据分析。上传从 ERP、CRM、进销存或 Excel 导出的销售明细，自动识别字段和口径，分析业绩与目标达成、同比环比、客户 RFM 分层与流失预警、产品 ABC 分类与毛利、量价结构拆分、商机漏斗与预测，并生成销售周报月报。无需预先整理数据或连接系统。",
+    "en": "Sales analysis for small and mid-sized businesses. Upload sales records exported from an ERP, CRM or spreadsheet; it works out the columns, then covers performance and targets, period comparisons, RFM customer segments and churn alerts, product ABC and margins, price-volume-mix, pipeline and forecasts, and weekly or monthly sales reports."
+  },
+  "welcome_message": {
+    "zh": "把销售明细表（Excel 或 CSV）发给我，告诉我你想知道什么。不用先整理，我会先看懂数据再分析。",
+    "en": "Send me your sales records (Excel or CSV) and tell me what you want to know. No clean-up needed; I will read the data first."
+  },
+  "icon_name": "bar-chart-3",
+  "color": "#2563EB",
+  "prompt_files": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "AGENTS.md"
+  ],
+  "quick_prompts": [
+    {
+      "title": {
+        "zh": "业绩分析",
+        "en": "Sales performance"
+      },
+      "description": {
+        "zh": "销售额趋势、同比环比、销售排名",
+        "en": "Trend, period comparison and rankings"
+      },
+      "prompt": {
+        "zh": "请分析我上传的销售数据：本期业绩怎么样，和上期、去年同期比变化多少，哪些销售人员、区域或产品贡献最大，变化主要来自哪里。",
+        "en": "Analyze the sales data I uploaded: how did this period go, how does it compare with the previous period and last year, who or what contributed most, and where did the change come from."
+      },
+      "color": "#e8f4ff",
+      "icon_name": "trending-up"
+    },
+    {
+      "title": {
+        "zh": "目标完成预测",
+        "en": "Will we hit the target?"
+      },
+      "description": {
+        "zh": "按当前进度推算本月能完成多少",
+        "en": "Project the period-end result"
+      },
+      "prompt": {
+        "zh": "本月目标是（填写金额）。请根据目前的销售数据算出达成率和时间进度，并按近期日均推算月底大概能完成多少，给出乐观、中性、保守三种情况。",
+        "en": "This month's target is (amount). From the sales so far, give the attainment and time elapsed, and project the month-end result in optimistic, base and conservative cases."
+      },
+      "color": "#dcfce7",
+      "icon_name": "activity"
+    },
+    {
+      "title": {
+        "zh": "客户分层",
+        "en": "Customer segments"
+      },
+      "description": {
+        "zh": "RFM 分层，找出重点和要流失的客户",
+        "en": "RFM segments, key and at-risk customers"
+      },
+      "prompt": {
+        "zh": "请用 RFM 方法给我的客户分层，告诉我哪些是重要客户、哪些很久没下单可能要流失，并导出一份需要重点跟进的客户名单。",
+        "en": "Segment my customers with RFM, tell me which are key and which may be churning, and export a follow-up list."
+      },
+      "color": "#fef3c7",
+      "icon_name": "user"
+    },
+    {
+      "title": {
+        "zh": "产品与毛利",
+        "en": "Products and margin"
+      },
+      "description": {
+        "zh": "ABC 分类、毛利、滞销品",
+        "en": "ABC classes, margins, slow movers"
+      },
+      "prompt": {
+        "zh": "请分析各产品的销售额和毛利，做 ABC 分类，找出卖得多但不赚钱的产品和长期不动销的产品。",
+        "en": "Analyze sales and margin by product, run an ABC classification, and find products that sell but do not earn and products that stopped selling."
+      },
+      "color": "#f3e8ff",
+      "icon_name": "shopping-bag"
+    },
+    {
+      "title": {
+        "zh": "增长原因拆解",
+        "en": "Why did sales change?"
+      },
+      "description": {
+        "zh": "拆成销量、结构、价格、新品影响",
+        "en": "Split into volume, mix, price and new items"
+      },
+      "prompt": {
+        "zh": "这个月销售额和上个月比变化了，请帮我拆解：多少是因为卖得多或少，多少是产品结构变化，多少是价格变化，多少来自新品或停售的产品。",
+        "en": "Sales changed from last month. Break it down into volume, product mix, price, and new or discontinued products."
+      },
+      "color": "#eef2ff",
+      "icon_name": "candlestick-chart"
+    },
+    {
+      "title": {
+        "zh": "生成销售周报",
+        "en": "Weekly sales report"
+      },
+      "description": {
+        "zh": "核心指标、变化原因、问题与建议",
+        "en": "Key numbers, drivers, issues and actions"
+      },
+      "prompt": {
+        "zh": "请根据上传的数据写一份销售周报：一句话结论、核心指标对比、变化来自哪里、需要关注的问题和建议，同时生成一份 Excel 汇总表。",
+        "en": "Write a weekly sales report from the uploaded data: a one-line summary, key numbers vs last week, what drove the change, issues and suggested actions, plus an Excel summary."
+      },
+      "color": "#fdf4e7",
+      "icon_name": "file-text"
+    }
+  ],
+  "task_examples": {
+    "zh": [
+      "每周一「09:00」根据上周销售数据生成销售周报，标出变化最大的客户和产品",
+      "每月1日「10:00」汇总上月销售额、目标达成和同比，生成 Excel 月报",
+      "每个工作日「18:00」统计当天销售额和订单数，与上周同日对比",
+      "每周五「17:00」列出超过平均购买间隔两倍未下单的重点客户",
+      "每月最后一个工作日「16:00」按当前进度推算本月能否完成目标",
+      "每月15日「10:00」更新客户 RFM 分层，导出需要回访的客户名单"
+    ],
+    "en": [
+      "Every Monday at 09:00, write last week's sales report and flag the customers and products that changed most",
+      "On the 1st of each month at 10:00, summarize last month's sales, target attainment and year-on-year change in an Excel report",
+      "Every weekday at 18:00, total today's sales and orders and compare with the same day last week",
+      "Every Friday at 17:00, list key customers who have not ordered for twice their usual interval",
+      "On the last business day of each month at 16:00, project whether this month's target will be met",
+      "On the 15th of each month at 10:00, refresh the RFM segments and export the customers to call back"
+    ]
+  }
+}
